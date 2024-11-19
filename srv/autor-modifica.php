@@ -4,6 +4,8 @@ require_once __DIR__ . "/../lib/php/ejecutaServicio.php";
 require_once __DIR__ . "/../lib/php/recuperaIdEntero.php";
 require_once __DIR__ . "/../lib/php/recuperaTexto.php";
 require_once __DIR__ . "/../lib/php/validaNombre.php";
+require_once __DIR__ . "/../lib/php/validaApellido.php";
+require_once __DIR__ . "/../lib/php/validaNacionalidad.php";
 require_once __DIR__ . "/../lib/php/update.php";
 require_once __DIR__ . "/../lib/php/devuelveJson.php";
 require_once __DIR__ . "/Bd.php";
@@ -18,8 +20,8 @@ ejecutaServicio(function () {
 
  // Validamos los textos
  $nombre = validaNombre($nombre);
- $apellido = validaNombre($apellido);
- $nacionalidad = validaNombre($nacionalidad);
+ $apellido = validaApellido($apellido);
+ $nacionalidad = validaNacionalidad($nacionalidad);
 
  // Actualizamos los datos en la tabla AUTOR
  update(

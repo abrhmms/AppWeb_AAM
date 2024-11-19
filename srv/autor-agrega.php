@@ -3,6 +3,8 @@
 require_once __DIR__ . "/../lib/php/ejecutaServicio.php";
 require_once __DIR__ . "/../lib/php/recuperaTexto.php";
 require_once __DIR__ . "/../lib/php/validaNombre.php";
+require_once __DIR__ . "/../lib/php/validaApellido.php";
+require_once __DIR__ . "/../lib/php/validaNacionalidad.php";
 require_once __DIR__ . "/../lib/php/insert.php";
 require_once __DIR__ . "/../lib/php/devuelveCreated.php";
 require_once __DIR__ . "/Bd.php";
@@ -15,8 +17,8 @@ ejecutaServicio(function () {
  $nacionalidad = recuperaTexto("nacionalidad");
 
  $nombre = validaNombre($nombre);
- $apellido = validaNombre($apellido);
- $nacionalidad = validaNombre($nacionalidad);
+ $apellido = validaApellido($apellido);
+ $nacionalidad = validaNacionalidad($nacionalidad);
 
  $pdo = Bd::pdo();
  insert(pdo: $pdo, into: "AUTOR", values: [
